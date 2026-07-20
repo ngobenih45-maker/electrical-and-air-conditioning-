@@ -875,8 +875,23 @@ font-size:42px;
 margin-top:40px;
 }
 
+@media (max-width:768px){
+
 .nav-links{
-display:none;
+    position:absolute;
+    top:80px;
+    left:-100%;
+    width:100%;
+    background:#fff;
+    display:flex;
+    flex-direction:column;
+    transition:0.4s;
+}
+
+.nav-links.active{
+    left:0;
+}
+
 }
 
 .menu-btn{
