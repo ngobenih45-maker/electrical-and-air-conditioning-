@@ -323,7 +323,6 @@ window.addEventListener("scroll", () => {
 // PARTICLE BACKGROUND
 // =========================
 
-if (document.getElementById("particles-js")) {
 
 particlesJS("particles-js",{
 
