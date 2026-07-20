@@ -301,7 +301,6 @@ window.addEventListener("scroll", () => {
 // =========================
 
 
-particlesJS("particles-js",{
 
 particles:{
 
