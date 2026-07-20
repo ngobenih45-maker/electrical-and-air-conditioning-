@@ -13,23 +13,29 @@ window.addEventListener("load", () => {
     }
 });
 
-// ===============================
+// ===========================
 // MOBILE MENU
-// ===============================
+// ===========================
 
 const menuBtn = document.querySelector(".menu-btn");
 const navLinks = document.querySelector(".nav-links");
 
 if (menuBtn && navLinks) {
-    menuBtn.addEventListener("click", () => {
-        navLinks.classList.toggle("show");
 
-        if (menuBtn.innerHTML.includes("bars")) {
-            menuBtn.innerHTML = '<i class="fa-solid fa-xmark"></i>';
+    menuBtn.addEventListener("click", () => {
+        navLinks.classList.toggle("active");
+
+        const icon = menuBtn.querySelector("i");
+
+        if (navLinks.classList.contains("active")) {
+            icon.classList.remove("fa-bars");
+            icon.classList.add("fa-times");
         } else {
-            menuBtn.innerHTML = '<i class="fa-solid fa-bars"></i>';
+            icon.classList.remove("fa-times");
+            icon.classList.add("fa-bars");
         }
     });
+
 }
 
 // ===============================
