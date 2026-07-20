@@ -380,33 +380,41 @@ retina_detect:true
 // ===============================
 // END
 // ===============================
-const counters = document.querySelectorAll(".counter");
+/* ===========================
+   COUNTER
+=========================== */
 
-counters.forEach(counter => {
+document.addEventListener("DOMContentLoaded", function () {
 
-const update = () => {
+    const counters = document.querySelectorAll(".counter");
 
-const target = +counter.getAttribute("data-target");
+    counters.forEach(counter => {
 
-const count = +counter.innerText;
+        const target = parseInt(counter.getAttribute("data-target"));
+        let count = 0;
 
-const increment = target / 100;
+        const speed = target / 100;
 
-if(count < target){
+        function updateCounter() {
 
-counter.innerText = Math.ceil(count + increment);
+            if (count < target) {
 
-setTimeout(update,20);
+                count += speed;
 
-}else{
+                counter.innerText = Math.ceil(count);
 
-counter.innerText = target + "+";
+                requestAnimationFrame(updateCounter);
 
-}
+            } else {
 
-};
+                counter.innerText = target + "+";
 
-update();
+            }
+
+        }
+
+        updateCounter();
+
+    });
 
 });
-
