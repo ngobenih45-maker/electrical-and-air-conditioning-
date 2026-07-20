@@ -1284,3 +1284,24 @@ body.dark-mode textarea{
 body.dark-mode .faq-item{
     background:#222;
 }
+.hero{
+background:linear-gradient(-45deg,#003366,#005bea,#00c6fb,#00b4d8);
+background-size:400% 400%;
+animation:gradientMove 12s ease infinite;
+}
+
+@keyframes gradientMove{
+
+0%{
+background-position:0% 50%;
+}
+
+50%{
+background-position:100% 50%;
+}
+
+100%{
+background-position:0% 50%;
+}
+
+}
